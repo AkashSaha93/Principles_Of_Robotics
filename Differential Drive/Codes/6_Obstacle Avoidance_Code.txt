@@ -1,0 +1,37 @@
+// Principles of Robotics
+// RIT
+// Class of 2018
+// Authors - Akash_Saha , Vasant_Jambodhkar
+// as7933@rit.edu
+
+
+
+int d2=8,d1=7,s1=9,s2=10,e=4,i=0,a2=2;
+void changeDIR();
+void setup()
+{
+	pinMode(d1,OUTPUT);
+	pinMode(d2,OUTPUT);
+	pinMode(s1,OUTPUT);
+	pinMode(s2,OUTPUT);
+	pinMode(e,OUTPUT);
+	pinMode(a2,INPUT);
+}
+void loop() 
+{
+	if(analogRead(a2)>250)
+	changeDIR();
+	digitalWrite(d1,HIGH);
+	digitalWrite(e ,HIGH);
+	digitalWrite(d2,LOW);
+	analogWrite(s1,200);
+	analogWrite(s2,200);
+}
+void changeDIR()
+{
+	digitalWrite(d1,HIGH);
+	digitalWrite(d2,HIGH);
+	analogWrite(s1,255);
+	analogWrite(s2,255);
+	delay(450);
+}
